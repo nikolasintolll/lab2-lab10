@@ -1,0 +1,20 @@
+import math
+
+# Verilənlər
+x = 0.9
+epsilon = 0.001
+
+# Başlanğıc
+term_index = 1
+term = math.sin(x)
+sum_series = term
+
+# Dövr: Term epsilon-dan kiçik olana qədər davam edir
+while abs(term) >= epsilon:
+    term_index += 1
+    term = (math.sin(x))**term_index / term_index
+    sum_series += term
+
+# Nəticəni çap et
+print("S = {:.4f}".format(sum_series))
+print("Cəmin əldə olunması üçün lazım olan addım sayı:", term_index)
