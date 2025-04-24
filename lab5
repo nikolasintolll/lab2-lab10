@@ -1,0 +1,19 @@
+A = [3, -2, 5, 0, -7, 4]
+
+# Hasil üçün başlanğıc dəyər 1-dir
+hasil = 1
+
+# Müsbət ədədlər olub-olmadığını yoxlamaq üçün bir bayraq
+musbet_var = False
+
+# Müsbət elementləri tapıb hasilə vururuq
+for eded in A:
+    if eded > 0:
+        hasil *= eded
+        musbet_var = True
+
+# Əgər heç bir müsbət ədəd yoxdursa, məlumat verək
+if musbet_var:
+    print("Müsbət elementlərin hasili:", hasil)
+else:
+    print("Siyahıda müsbət element yoxdur.")
