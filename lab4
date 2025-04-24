@@ -1,0 +1,10 @@
+import random
+
+# Nə qədər ədəd istədiyini müəyyənləşdirək, məsələn 10 ədəd
+n = 10
+
+# [7; 25] aralığında təsadüfi real ədədlərdən ibarət siyahı
+random_numbers = [random.uniform(7, 25) for _ in range(n)]
+
+# Siyahını ekrana çıxarırıq
+print("Təsadüfi həqiqi ədədlər:", random_numbers)
