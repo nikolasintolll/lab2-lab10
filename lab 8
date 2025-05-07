@@ -1,0 +1,29 @@
+import math
+
+def f(x):
+    return (math.exp(x) - 1) / x - 1
+
+def bisection_method(a, b, tol=1e-6, max_iter=100):
+    if f(a) * f(b) >= 0:
+        print("Bu aralıqda tənliyin kökü yoxdur və ya birdən çox kök ola bilər.")
+        return None
+
+    iter_count = 0
+    while (b - a) / 2 > tol and iter_count < max_iter:
+        orta = (a + b) / 2
+        if f(orta) == 0:
+            return orta  # dəqiq kök tapılıb
+        elif f(a) * f(orta) < 0:
+            b = orta
+        else:
+            a = orta
+        iter_count += 1
+
+    return (a + b) / 2  # təqribi kök
+
+# Tənliyin kökünü tapırıq
+a = 0.5
+b = 1.0
+kok = bisection_method(a, b)
+
+print("Təqribi kök:", kok)
