@@ -1,0 +1,21 @@
+import math
+
+def g(x):
+    return math.log(x + 1)  # ln(x + 1)
+
+def simple_iteration(x0, tol=1e-6, max_iter=100):
+    x = x0
+    for i in range(max_iter):
+        x_new = g(x)
+        if abs(x_new - x) < tol:
+            print(f"{i+1} iterasiya sonra tapıldı.")
+            return x_new
+        x = x_new
+    print("İterasiya limitinə çatıldı.")
+    return x
+
+# Başlanğıc təxmin (interval daxilində seçilir)
+x0 = 0.5
+kok = simple_iteration(x0)
+
+print("Təqribi kök:", kok)
