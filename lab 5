@@ -1,0 +1,17 @@
+def musbet_elementlerin_hasili(A):
+    hasil = 1
+    musbet_var = False  # Müsbət element olub olmadığını yoxlamaq üçün
+    
+    for eded in A:
+        if eded > 0:
+            hasil *= eded
+            musbet_var = True
+
+    if musbet_var:
+        return hasil
+    else:
+        return 0  # Əgər heç bir müsbət element yoxdursa, 0 qaytarırıq
+
+# Nümunə istifadə:
+A = [3, -2, 5, 0, -1]
+print("Müsbət elementlərin hasili:", musbet_elementlerin_hasili(A))
