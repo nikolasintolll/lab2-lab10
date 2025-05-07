@@ -1,0 +1,23 @@
+# 1. Ədədi massiv yaradıb fayla yazırıq
+massiv = [4, 7, 12, 3, 9, 6, 5, 10]
+
+with open("ededler.txt", "w") as fayl:
+    for eded in massiv:
+        fayl.write(str(eded) + "\n")
+
+# 2. Fayldan oxuyub tək ədədləri seçirik
+tek_ededler = []
+with open("ededler.txt", "r") as fayl:
+    for setir in fayl:
+        eded = int(setir.strip())
+        if eded % 2 == 1:
+            tek_ededler.append(eded)
+
+# 3. Tək ədədləri yeni fayla yazırıq
+with open("tek_ededler.txt", "w") as yeni_fayl:
+    for eded in tek_ededler:
+        yeni_fayl.write(str(eded) + "\n")
+
+# 4. Tək ədədlərin cəmini hesablayırıq
+cem = sum(tek_ededler)
+print("Tək ədədlərin cəmi:", cem)
